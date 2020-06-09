@@ -326,44 +326,44 @@ namespace ClassicUO.Game.UI.Gumps
             rightArea.Add(_dragSelectArea);
             _use_smooth_boat_movement = CreateCheckBox(rightArea, "Smooth boat movements", ProfileManager.Current.UseSmoothBoatMovement, 0, SPACE_Y);
             _use_smooth_boat_movement.IsVisible = Client.Version >= ClientVersion.CV_7090;
-            //_autoOpenDoors = CreateCheckBox(rightArea, "Auto Open Doors", ProfileManager.Current.AutoOpenDoors, 0, SPACE_Y);
-            //_smoothDoors = CreateCheckBox(rightArea, "Smooth doors", ProfileManager.Current.SmoothDoors, 20, SPACE_Y);
-            //_autoOpenCorpseArea = new ScrollAreaItem();
-            //_autoOpenCorpse = CreateCheckBox(rightArea, "Auto Open Corpses", ProfileManager.Current.AutoOpenCorpses, 0, SPACE_Y);
-            //_autoOpenCorpse.ValueChanged += (sender, e) => { _autoOpenCorpseArea.IsVisible = _autoOpenCorpse.IsChecked; };
-            //_skipEmptyCorpse = new Checkbox(0x00D2, 0x00D3, "Skip empty corpses", FONT, HUE_FONT)
-            //{
-            //    X = 20,
-            //    Y = 5,
-            //    IsChecked = ProfileManager.Current.SkipEmptyCorpse
-            //};
-            //_autoOpenCorpseArea.Add(_skipEmptyCorpse);
-            //_autoOpenCorpseRange = CreateInputField(_autoOpenCorpseArea, new TextBox(FONT, 2, 80, 80)
-            //{
-            //    X = 30,
-            //    Y = _skipEmptyCorpse.Y + _skipEmptyCorpse.Height,
-            //    Width = 50,
-            //    Height = 30,
-            //    NumericOnly = true,
-            //    Text = ProfileManager.Current.AutoOpenCorpseRange.ToString()
-            //}, "Corpse Open Range:");
-            //text = new Label("Corpse Open Options:", true, HUE_FONT)
-            //{
-            //    Y = _autoOpenCorpseRange.Y + _autoOpenCorpseRange.Height + 5,
-            //    X = 25
-            //};
-            //_autoOpenCorpseArea.Add(text);
-            //_autoOpenCorpseOptions = new Combobox(text.X + text.Width + 5, text.Y, 150, new[]
-            //{
-            //    "None", "Not Targeting", "Not Hiding", "Both"
-            //})
-            //{
-            //    SelectedIndex = ProfileManager.Current.CorpseOpenOptions
-            //};
-            //_autoOpenCorpseArea.Add(_autoOpenCorpseOptions);
+            _autoOpenDoors = CreateCheckBox(rightArea, "Auto Open Doors [ Devre Disi ]", ProfileManager.Current.AutoOpenDoors, 0, SPACE_Y);
+            _smoothDoors = CreateCheckBox(rightArea, "Smooth doors", ProfileManager.Current.SmoothDoors, 20, SPACE_Y);
+            _autoOpenCorpseArea = new ScrollAreaItem();
+            _autoOpenCorpse = CreateCheckBox(rightArea, "Auto Open Corpses [ Devre Disi ]", ProfileManager.Current.AutoOpenCorpses, 0, SPACE_Y);
+            _autoOpenCorpse.ValueChanged += (sender, e) => { _autoOpenCorpseArea.IsVisible = _autoOpenCorpse.IsChecked; };
+            _skipEmptyCorpse = new Checkbox(0x00D2, 0x00D3, "Skip empty corpses", FONT, HUE_FONT)
+            {
+                X = 20,
+                Y = 5,
+                IsChecked = ProfileManager.Current.SkipEmptyCorpse
+            };
+            _autoOpenCorpseArea.Add(_skipEmptyCorpse);
+            _autoOpenCorpseRange = CreateInputField(_autoOpenCorpseArea, new TextBox(FONT, 2, 80, 80)
+            {
+                X = 30,
+                Y = _skipEmptyCorpse.Y + _skipEmptyCorpse.Height,
+                Width = 50,
+                Height = 30,
+                NumericOnly = true,
+                Text = ProfileManager.Current.AutoOpenCorpseRange.ToString()
+            }, "Corpse Open Range:");
+            text = new Label("Corpse Open Options:", true, HUE_FONT)
+            {
+                Y = _autoOpenCorpseRange.Y + _autoOpenCorpseRange.Height + 5,
+                X = 25
+            };
+            _autoOpenCorpseArea.Add(text);
+            _autoOpenCorpseOptions = new Combobox(text.X + text.Width + 5, text.Y, 150, new[]
+            {
+                "None", "Not Targeting", "Not Hiding", "Both"
+            })
+            {
+                SelectedIndex = ProfileManager.Current.CorpseOpenOptions
+            };
+            _autoOpenCorpseArea.Add(_autoOpenCorpseOptions);
 
-            //_autoOpenCorpseArea.Y = SPACE_Y;
-            //rightArea.Add(_autoOpenCorpseArea);
+            _autoOpenCorpseArea.Y = SPACE_Y;
+            rightArea.Add(_autoOpenCorpseArea);
 
 
             _drawRoofs = CreateCheckBox(rightArea, "Hide roof tiles", !ProfileManager.Current.DrawRoofs, 0, SPACE_Y);
@@ -404,18 +404,18 @@ namespace ClassicUO.Game.UI.Gumps
 
             fpsItem = new ScrollAreaItem();
 
-            text = new Label("Grid Loot", true, HUE_FONT)
-            {
-                Y = _showCorpseNameIncoming.Bounds.Bottom + 5 + SPACE_Y
-            };
-            _gridLoot = new Combobox(text.X + text.Width + 10, text.Y, 200, new[] {"None", "Grid loot only", "Both"}, ProfileManager.Current.GridLootType);
+            //text = new Label("Grid Loot", true, HUE_FONT)
+            //{
+            //    Y = _showCorpseNameIncoming.Bounds.Bottom + 5 + SPACE_Y
+            //};
+            //_gridLoot = new Combobox(text.X + text.Width + 10, text.Y, 200, new[] {"None", "Grid loot only", "Both"}, ProfileManager.Current.GridLootType);
 
             fpsItem.Add(text);
-            fpsItem.Add(_gridLoot);
+            //fpsItem.Add(_gridLoot);
 
             rightArea.Add(fpsItem);
 
-            //_autoOpenCorpseArea.IsVisible = _autoOpenCorpse.IsChecked;
+            _autoOpenCorpseArea.IsVisible = _autoOpenCorpse.IsChecked;
             _dragSelectArea.IsVisible = _enableDragSelect.IsChecked;
             
             ScrollAreaItem hpAreaItem = new ScrollAreaItem();
@@ -473,23 +473,23 @@ namespace ClassicUO.Game.UI.Gumps
             }, mode);
             hpAreaItem.Add(_healtbarType);
 
-            text = new Label("Fields: ", true, HUE_FONT)
-            {
-                Y = _hpComboBox.Bounds.Bottom + 45
-            };
-            hpAreaItem.Add(text);
+            //text = new Label("Fields: ", true, HUE_FONT)
+            //{
+            //    Y = _hpComboBox.Bounds.Bottom + 45
+            //};
+            //hpAreaItem.Add(text);
 
             mode = ProfileManager.Current.FieldsType;
 
             if (mode < 0 || mode > 2)
                 mode = 0;
 
-            _fieldsType = new Combobox(text.Bounds.Right + 10, _hpComboBox.Bounds.Bottom + 45, 150, new[]
-            {
-                "Normal fields", "Static fields", "Tile fields"
-            }, mode);
+            //_fieldsType = new Combobox(text.Bounds.Right + 10, _hpComboBox.Bounds.Bottom + 45, 150, new[]
+            //{
+            //    "Normal fields", "Static fields", "Tile fields"
+            //}, mode);
 
-            hpAreaItem.Add(_fieldsType);
+            //hpAreaItem.Add(_fieldsType);
             rightArea.Add(hpAreaItem);
 
 
@@ -1402,7 +1402,7 @@ namespace ClassicUO.Game.UI.Gumps
             _containerScaleItems = CreateCheckBox(rightArea, "Scale items inside containers", ProfileManager.Current.ScaleItemsInsideContainers, 0, 20 + SPACE_Y);
             _useLargeContianersGumps = CreateCheckBox(rightArea, "Use large containers gump", ProfileManager.Current.UseLargeContainerGumps, 0, SPACE_Y);
             _useLargeContianersGumps.IsVisible = Client.Version >= ClientVersion.CV_706000;
-             _containerDoubleClickToLoot = CreateCheckBox(rightArea, "Double click to loot items inside containers", ProfileManager.Current.DoubleClickToLootInsideContainers, 0, SPACE_Y);
+             _containerDoubleClickToLoot = CreateCheckBox(rightArea, "Double click to loot items inside containers [ Devre Disi ]", ProfileManager.Current.DoubleClickToLootInsideContainers, 0, SPACE_Y);
             _relativeDragAnDropItems = CreateCheckBox(rightArea, "Relative drag and drop items in containers", ProfileManager.Current.RelativeDragAndDropItems, 0, SPACE_Y);
 
             item = new ScrollAreaItem();
@@ -1745,7 +1745,7 @@ namespace ClassicUO.Game.UI.Gumps
                 ProfileManager.Current.TreeToStumps = _treeToStumps.IsChecked;
             }
 
-            ProfileManager.Current.FieldsType = _fieldsType.SelectedIndex;
+            ProfileManager.Current.FieldsType = 0;
             ProfileManager.Current.HideVegetation = _hideVegetation.IsChecked;
             ProfileManager.Current.NoColorObjectsOutOfRange = _noColorOutOfRangeObjects.IsChecked;
             ProfileManager.Current.UseCircleOfTransparency = _useCircleOfTransparency.IsChecked;
@@ -1786,7 +1786,7 @@ namespace ClassicUO.Game.UI.Gumps
 
             ProfileManager.Current.ShowNewMobileNameIncoming = _showMobileNameIncoming.IsChecked;
             ProfileManager.Current.ShowNewCorpseNameIncoming = _showCorpseNameIncoming.IsChecked;
-            ProfileManager.Current.GridLootType = _gridLoot.SelectedIndex;
+            ProfileManager.Current.GridLootType = 0;
             ProfileManager.Current.SallosEasyGrab = _sallosEasyGrab.IsChecked;
             ProfileManager.Current.PartyInviteGump = _partyInviteGump.IsChecked;
             ProfileManager.Current.UseObjectsFading = _objectsFading.IsChecked;
@@ -2149,7 +2149,7 @@ namespace ClassicUO.Game.UI.Gumps
             }
 
             ProfileManager.Current.UseLargeContainerGumps = _useLargeContianersGumps.IsChecked;
-            ProfileManager.Current.DoubleClickToLootInsideContainers = _containerDoubleClickToLoot.IsChecked;
+            ProfileManager.Current.DoubleClickToLootInsideContainers = false;
             ProfileManager.Current.RelativeDragAndDropItems = _relativeDragAnDropItems.IsChecked;
 
 

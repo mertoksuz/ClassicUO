@@ -1265,20 +1265,20 @@ namespace ClassicUO.Game.GameObjects
 
         public void TryOpenCorpses()
         {
-            if (ProfileManager.Current.AutoOpenCorpses)
-            {
-                if ((ProfileManager.Current.CorpseOpenOptions == 1 || ProfileManager.Current.CorpseOpenOptions == 3) && TargetManager.IsTargeting)
-                    return;
+            //if (ProfileManager.Current.AutoOpenCorpses)
+            //{
+            //    if ((ProfileManager.Current.CorpseOpenOptions == 1 || ProfileManager.Current.CorpseOpenOptions == 3) && TargetManager.IsTargeting)
+            //        return;
 
-                if ((ProfileManager.Current.CorpseOpenOptions == 2 || ProfileManager.Current.CorpseOpenOptions == 3) && IsHidden)
-                    return;
+            //    if ((ProfileManager.Current.CorpseOpenOptions == 2 || ProfileManager.Current.CorpseOpenOptions == 3) && IsHidden)
+            //        return;
 
-                foreach (var c in World.Items.Where(t => t.Graphic == 0x2006 && !AutoOpenedCorpses.Contains(t.Serial) && t.Distance <= ProfileManager.Current.AutoOpenCorpseRange))
-                {
-                    AutoOpenedCorpses.Add(c.Serial);
-                    GameActions.DoubleClickQueued(c.Serial);
-                }
-            }
+            //    foreach (var c in World.Items.Where(t => t.Graphic == 0x2006 && !AutoOpenedCorpses.Contains(t.Serial) && t.Distance <= ProfileManager.Current.AutoOpenCorpseRange))
+            //    {
+            //        AutoOpenedCorpses.Add(c.Serial);
+            //        GameActions.DoubleClickQueued(c.Serial);
+            //    }
+            //}
         }
 
 
@@ -1290,16 +1290,16 @@ namespace ClassicUO.Game.GameObjects
 
         private void TryOpenDoors()
         {
-            if (!World.Player.IsDead && ProfileManager.Current.AutoOpenDoors)
-            {
-                int x = X, y = Y, z = Z;
-                Pathfinder.GetNewXY((byte) Direction, ref x, ref y);
+            //if (!World.Player.IsDead && ProfileManager.Current.AutoOpenDoors)
+            //{
+            //    int x = X, y = Y, z = Z;
+            //    Pathfinder.GetNewXY((byte) Direction, ref x, ref y);
 
-                if (World.Items.Any(s =>
-                                        s.ItemData.IsDoor && s.X == x && s.Y == y && s.Z - 15 <= z &&
-                                        s.Z + 15 >= z))
-                    GameActions.OpenDoor();
-            }
+            //    if (World.Items.Any(s =>
+            //                            s.ItemData.IsDoor && s.X == x && s.Y == y && s.Z - 15 <= z &&
+            //                            s.Z + 15 >= z))
+            //        GameActions.OpenDoor();
+            //}
         }
 
         public override void Destroy()
