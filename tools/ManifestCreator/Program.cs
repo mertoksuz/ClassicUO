@@ -14,11 +14,11 @@ namespace ManifestCreator
 
         private static string[] _file_list =
         {
-            "ClassicUO.exe",
-            "ClassicUO",
-            "ClassicUO.bin.osx",
-            "ClassicUO.bin.x86_64",
-            "ClassicUO.exe.config",  
+            "RavendorUO.exe",
+            "RavendorUO",
+            "RavendorUO.bin.osx",
+            "RavendorUO.bin.x86_64",
+            "RavendorUO.exe.config",  
             //"ClassicUO.pdb",                    // to verify
             "cuoapi.dll",
             "FNA.dll",

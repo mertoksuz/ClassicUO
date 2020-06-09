@@ -203,16 +203,16 @@ namespace ClassicUO
             {
                 if ((flags & INVALID_UO_DIRECTORY) != 0)
                 {
-                    Client.ShowErrorMessage("Your Ultima Online directory seems to be invalid.\nDownload the official Launcher to setup and run your game.\n\nLink: classicuo.eu");
+                    Client.ShowErrorMessage("Your Ultima Online directory seems to be invalid.\nDownload the official Launcher to setup and run your game.\n\nLink: www.ravendoruo.com");
                 }
                 else if ((flags & INVALID_UO_VERSION) != 0)
                 {
-                    Client.ShowErrorMessage("Your Ultima Online client version seems to be invalid.\nDownload the official Launcher to setup and run your game.\n\nLink: classicuo.eu");
+                    Client.ShowErrorMessage("Your Ultima Online client version seems to be invalid.\nDownload the official Launcher to setup and run your game.\n\nLink: www.ravendoruo.com");
                 }
 
                 try
                 {
-                    Process.Start("https://classicuo.eu");
+                    Process.Start("https://www.ravendoruo.com");
                 }
                 catch { }
             }

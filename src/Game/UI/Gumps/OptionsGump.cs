@@ -326,44 +326,44 @@ namespace ClassicUO.Game.UI.Gumps
             rightArea.Add(_dragSelectArea);
             _use_smooth_boat_movement = CreateCheckBox(rightArea, "Smooth boat movements", ProfileManager.Current.UseSmoothBoatMovement, 0, SPACE_Y);
             _use_smooth_boat_movement.IsVisible = Client.Version >= ClientVersion.CV_7090;
-            _autoOpenDoors = CreateCheckBox(rightArea, "Auto Open Doors", ProfileManager.Current.AutoOpenDoors, 0, SPACE_Y);
-            _smoothDoors = CreateCheckBox(rightArea, "Smooth doors", ProfileManager.Current.SmoothDoors, 20, SPACE_Y);
-            _autoOpenCorpseArea = new ScrollAreaItem();
-            _autoOpenCorpse = CreateCheckBox(rightArea, "Auto Open Corpses", ProfileManager.Current.AutoOpenCorpses, 0, SPACE_Y);
-            _autoOpenCorpse.ValueChanged += (sender, e) => { _autoOpenCorpseArea.IsVisible = _autoOpenCorpse.IsChecked; };
-            _skipEmptyCorpse = new Checkbox(0x00D2, 0x00D3, "Skip empty corpses", FONT, HUE_FONT)
-            {
-                X = 20,
-                Y = 5,
-                IsChecked = ProfileManager.Current.SkipEmptyCorpse
-            };
-            _autoOpenCorpseArea.Add(_skipEmptyCorpse);
-            _autoOpenCorpseRange = CreateInputField(_autoOpenCorpseArea, new TextBox(FONT, 2, 80, 80)
-            {
-                X = 30,
-                Y = _skipEmptyCorpse.Y + _skipEmptyCorpse.Height,
-                Width = 50,
-                Height = 30,
-                NumericOnly = true,
-                Text = ProfileManager.Current.AutoOpenCorpseRange.ToString()
-            }, "Corpse Open Range:");
-            text = new Label("Corpse Open Options:", true, HUE_FONT)
-            {
-                Y = _autoOpenCorpseRange.Y + _autoOpenCorpseRange.Height + 5,
-                X = 25
-            };
-            _autoOpenCorpseArea.Add(text);
-            _autoOpenCorpseOptions = new Combobox(text.X + text.Width + 5, text.Y, 150, new[]
-            {
-                "None", "Not Targeting", "Not Hiding", "Both"
-            })
-            {
-                SelectedIndex = ProfileManager.Current.CorpseOpenOptions
-            };
-            _autoOpenCorpseArea.Add(_autoOpenCorpseOptions);
+            //_autoOpenDoors = CreateCheckBox(rightArea, "Auto Open Doors", ProfileManager.Current.AutoOpenDoors, 0, SPACE_Y);
+            //_smoothDoors = CreateCheckBox(rightArea, "Smooth doors", ProfileManager.Current.SmoothDoors, 20, SPACE_Y);
+            //_autoOpenCorpseArea = new ScrollAreaItem();
+            //_autoOpenCorpse = CreateCheckBox(rightArea, "Auto Open Corpses", ProfileManager.Current.AutoOpenCorpses, 0, SPACE_Y);
+            //_autoOpenCorpse.ValueChanged += (sender, e) => { _autoOpenCorpseArea.IsVisible = _autoOpenCorpse.IsChecked; };
+            //_skipEmptyCorpse = new Checkbox(0x00D2, 0x00D3, "Skip empty corpses", FONT, HUE_FONT)
+            //{
+            //    X = 20,
+            //    Y = 5,
+            //    IsChecked = ProfileManager.Current.SkipEmptyCorpse
+            //};
+            //_autoOpenCorpseArea.Add(_skipEmptyCorpse);
+            //_autoOpenCorpseRange = CreateInputField(_autoOpenCorpseArea, new TextBox(FONT, 2, 80, 80)
+            //{
+            //    X = 30,
+            //    Y = _skipEmptyCorpse.Y + _skipEmptyCorpse.Height,
+            //    Width = 50,
+            //    Height = 30,
+            //    NumericOnly = true,
+            //    Text = ProfileManager.Current.AutoOpenCorpseRange.ToString()
+            //}, "Corpse Open Range:");
+            //text = new Label("Corpse Open Options:", true, HUE_FONT)
+            //{
+            //    Y = _autoOpenCorpseRange.Y + _autoOpenCorpseRange.Height + 5,
+            //    X = 25
+            //};
+            //_autoOpenCorpseArea.Add(text);
+            //_autoOpenCorpseOptions = new Combobox(text.X + text.Width + 5, text.Y, 150, new[]
+            //{
+            //    "None", "Not Targeting", "Not Hiding", "Both"
+            //})
+            //{
+            //    SelectedIndex = ProfileManager.Current.CorpseOpenOptions
+            //};
+            //_autoOpenCorpseArea.Add(_autoOpenCorpseOptions);
 
-            _autoOpenCorpseArea.Y = SPACE_Y;
-            rightArea.Add(_autoOpenCorpseArea);
+            //_autoOpenCorpseArea.Y = SPACE_Y;
+            //rightArea.Add(_autoOpenCorpseArea);
 
 
             _drawRoofs = CreateCheckBox(rightArea, "Hide roof tiles", !ProfileManager.Current.DrawRoofs, 0, SPACE_Y);
@@ -415,7 +415,7 @@ namespace ClassicUO.Game.UI.Gumps
 
             rightArea.Add(fpsItem);
 
-            _autoOpenCorpseArea.IsVisible = _autoOpenCorpse.IsChecked;
+            //_autoOpenCorpseArea.IsVisible = _autoOpenCorpse.IsChecked;
             _dragSelectArea.IsVisible = _enableDragSelect.IsChecked;
             
             ScrollAreaItem hpAreaItem = new ScrollAreaItem();

@@ -56,7 +56,7 @@ namespace ClassicUO.Game.UI.Gumps
 
             const ushort DARK_MODE_JOURNAL_HUE = 907;
 
-            string str = "Dark mode";
+            string str = "Dark Mode";
             int width = FontsLoader.Instance.GetWidthASCII(6, str);
 
             Checkbox darkMode;
