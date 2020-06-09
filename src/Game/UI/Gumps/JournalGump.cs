@@ -54,7 +54,7 @@ namespace ClassicUO.Game.UI.Gumps
                 TitleGumpID = 0x82A
             });
 
-            const ushort DARK_MODE_JOURNAL_HUE = 903;
+            const ushort DARK_MODE_JOURNAL_HUE = 907;
 
             string str = "Dark mode";
             int width = FontsLoader.Instance.GetWidthASCII(6, str);

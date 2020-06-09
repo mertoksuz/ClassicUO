@@ -65,7 +65,7 @@ namespace ClassicUO.Game.UI.Gumps
 
         private void BuildGump()
         {
-            Add(new ResizePic(0x0A28)
+            Add(new ResizePic(0x13EC)
             {
                 Width = 450,
                 Height = 480

@@ -58,17 +58,17 @@ namespace ClassicUO.Game.UI.Gumps.CharCreation
 
         public CreateCharAppearanceGump() : base(0, 0)
         {
-            Add(new ResizePic(0x0E10)
+            Add(new ResizePic(0x13EC)
             {
-                X = 82, Y = 125, Width = 151, Height = 310
+                X = 22, Y = 125, Width = 151, Height = 310
             }, 1);
-            Add(new GumpPic(280, 53, 0x0709, 0), 1);
-            Add(new GumpPic(240, 73, 0x070A, 0), 1);
-            Add(new GumpPicTiled(248, 73, 215, 16, 0x070B), 1);
-            Add(new GumpPic(463, 73, 0x070C, 0), 1);
-            Add(new GumpPic(238, 98, 0x0708, 0), 1);
+            Add(new GumpPic(240, 53, 0x0709, 0), 1);
+            Add(new GumpPic(200, 73, 0x070A, 0), 1);
+            Add(new GumpPicTiled(208, 73, 215, 16, 0x070B), 1);
+            Add(new GumpPic(423, 73, 0x070C, 0), 1);
+            Add(new GumpPic(198, 98, 0x0708, 0), 1);
 
-            Add(new ResizePic(0x0E10)
+            Add(new ResizePic(0x13EC)
             {
                 X = 475, Y = 125, Width = 151, Height = 310
             }, 1);
@@ -98,7 +98,7 @@ namespace ClassicUO.Game.UI.Gumps.CharCreation
 
             Add(_nameTextBox = new TextBox(5, 16, 0, 200, false, hue: 1, style: FontStyle.Fixed)
             {
-                X = 257, Y = 65, Width = 200, Height = 20,
+                X = 217, Y = 65, Width = 200, Height = 20,
                 ValidationRules = (uint) (TEXT_ENTRY_RULES.LETTER | TEXT_ENTRY_RULES.SPACE)
             }, 1);
             _nameTextBox.SetText(string.Empty);
@@ -106,23 +106,23 @@ namespace ClassicUO.Game.UI.Gumps.CharCreation
             // Races
             Add(_humanRadio = new RadioButton(1, 0x0768, 0x0767)
             {
-                X = 180, Y = 435
+                X = 150, Y = 435
             }, 1);
 
             Add(new Button((int) Buttons.HumanButton, 0x0702, 0x0704, 0x0703)
             {
-                X = 200, Y = 435, ButtonAction = ButtonAction.Activate
+                X = 170, Y = 435, ButtonAction = ButtonAction.Activate
             }, 1);
             _humanRadio.ValueChanged += Race_ValueChanged;
 
             Add(_elfRadio = new RadioButton(1, 0x0768, 0x0767)
             {
-                X = 180, Y = 455
+                X = 150, Y = 455
             }, 1);
 
             Add(new Button((int) Buttons.ElfButton, 0x0705, 0x0707, 0x0706)
             {
-                X = 200, Y = 455, ButtonAction = ButtonAction.Activate
+                X = 170, Y = 455, ButtonAction = ButtonAction.Activate
             }, 1);
             _elfRadio.ValueChanged += Race_ValueChanged;
 
@@ -303,9 +303,9 @@ namespace ClassicUO.Game.UI.Gumps.CharCreation
 
             Add(_hairLabel = new Label(ClilocLoader.Instance.GetString(race == RaceType.GARGOYLE ? 1112309 : 3000121), false, 0, font: 9)
             {
-                X = 98, Y = 142
+                X = 38, Y = 142
             }, 1);
-            Add(_hairCombobox = new Combobox(97, 155, 120, content.Labels, CurrentOption[Layer.Hair]), 1);
+            Add(_hairCombobox = new Combobox(37, 155, 120, content.Labels, CurrentOption[Layer.Hair]), 1);
             _hairCombobox.OnOptionSelected += Hair_OnOptionSelected;
 
             // Facial Hair
@@ -315,9 +315,9 @@ namespace ClassicUO.Game.UI.Gumps.CharCreation
 
                 Add(_facialLabel = new Label(ClilocLoader.Instance.GetString(race == RaceType.GARGOYLE ? 1112511 : 3000122), false, 0, font: 9)
                 {
-                    X = 98, Y = 186
+                    X = 38, Y = 186
                 }, 1);
-                Add(_facialCombobox = new Combobox(97, 199, 120, content.Labels, CurrentOption[Layer.Beard]), 1);
+                Add(_facialCombobox = new Combobox(37, 199, 120, content.Labels, CurrentOption[Layer.Beard]), 1);
                 _facialCombobox.OnOptionSelected += Facial_OnOptionSelected;
             }
             else
@@ -352,7 +352,7 @@ namespace ClassicUO.Game.UI.Gumps.CharCreation
 
             UpdateEquipments();
 
-            Add(_paperDoll = new PaperDollInteractable(262, 135, _character, null)
+            Add(_paperDoll = new PaperDollInteractable(222, 135, _character, null)
             {
                 AcceptMouseInput = false
             }, 1);

@@ -7,7 +7,7 @@
     <ProjectGuid>{71F289FA-0EF8-4F72-A26E-A8280C0931C5}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>ClassicUO</RootNamespace>
-    <AssemblyName>ClassicUO</AssemblyName>
+    <AssemblyName>Ravendor UO</AssemblyName>
     <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

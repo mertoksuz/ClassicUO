@@ -67,12 +67,12 @@ namespace ClassicUO.Game.UI.Gumps.Login
             else if (loginScene.Characters.Length > 0)
                 _selectedCharacter = 0;
 
-            Add(new ResizePic(0x0A28)
+            Add(new ResizePic(0x13EC)
             {
-                X = 160, Y = 70, Width = 408, Height = 343 + yBonus
+                X = 115, Y = 70, Width = 408, Height = 343
             }, 1);
 
-            Add(new Label(ClilocLoader.Instance.GetString(3000050, "Character Selection"), false, 0x0386, font: 2)
+            Add(new Label(ClilocLoader.Instance.GetString(3000050, "Karakter Seçimi"), true, 0x07A1, font: 3)
             {
                 X = 267, Y = listTitleY
             }, 1);
@@ -96,7 +96,7 @@ namespace ClassicUO.Game.UI.Gumps.Login
 
                     Add(new CharacterEntryGump((uint) i, character, SelectCharacter, LoginCharacter)
                     {
-                        X = 224,
+                        X = 184,
                         Y = yOffset + posInList * 40,
                         Hue = posInList == _selectedCharacter ? SELECTED_COLOR : NORMAL_COLOR
                     }, 1);
@@ -108,14 +108,14 @@ namespace ClassicUO.Game.UI.Gumps.Login
             {
                 Add(new Button((int) Buttons.New, 0x159D, 0x159F, 0x159E)
                 {
-                    X = 224, Y = 350 + yBonus, ButtonAction = ButtonAction.Activate
+                    X = 184, Y = 350, ButtonAction = ButtonAction.Activate
                 }, 1);
             }
 
             Add(new Button((int)Buttons.Delete, 0x159A, 0x159C, 0x159B)
             {
-                X = 442,
-                Y = 350 + yBonus,
+                X = 402,
+                Y = 350,
                 ButtonAction = ButtonAction.Activate
             }, 1);
 

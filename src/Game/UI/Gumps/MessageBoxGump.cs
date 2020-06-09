@@ -45,7 +45,7 @@ namespace ClassicUO.Game.UI.Gumps
             Height = h;
             _action = action;
 
-            Add(new ResizePic(0x0A28)
+            Add(new ResizePic(0x13EC)
             {
                 Width = w, Height = h
             });
@@ -63,7 +63,7 @@ namespace ClassicUO.Game.UI.Gumps
                 Add(background);
             }
 
-            Add(new Label(message, false, 0x0386, Width - 90, 1)
+            Add(new Label(message, true, 0x07A1, Width - 90, 3)
             {
                 X = 40,
                 Y = 45
@@ -120,7 +120,7 @@ namespace ClassicUO.Game.UI.Gumps
             Height = h;
             _action = action;
 
-            Add(new ResizePic(0x0A28)
+            Add(new ResizePic(0x13EC)
             {
                 Width = w,
                 Height = h
@@ -128,7 +128,7 @@ namespace ClassicUO.Game.UI.Gumps
 
             Label l;
 
-            Add(l = new Label(message, false, 0x0386, Width - 90, 1)
+            Add(l = new Label(message, true, 0x07A1, Width - 90, 3)
             {
                 X = 40,
                 Y = 45

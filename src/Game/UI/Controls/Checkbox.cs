@@ -107,7 +107,7 @@ namespace ClassicUO.Game.UI.Controls
 
             bool ok = base.Draw(batcher, x, y);
             batcher.Draw2D(IsChecked ? _textures[ACTIVE] : _textures[INACTIVE], x, y, ref _hueVector);
-            _text.Draw(batcher, x + _textures[ACTIVE].Width + 2, y);
+            _text.Draw(batcher, x + _textures[ACTIVE].Width + 2, y - 2);
 
             return ok;
         }

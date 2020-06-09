@@ -53,49 +53,49 @@ namespace ClassicUO.Game.UI.Gumps.Login
             {
                 _buttonNormal = 0x15A4;
                 _buttonOver = 0x15A5;
-                const ushort HUE = 0x0386;
+                const ushort HUE = 0x07A1;
 
                 if (Client.Version >= ClientVersion.CV_500A)
-                    Add(new GumpPic(0, 0, 0x2329, 0));
+                    Add(new GumpPic(0, 0, 0x2569, 0));
 
                 // UO Flag
-                Add(new GumpPic(0, 4, 0x15A0, 0) { AcceptKeyboardInput = false });
+                //Add(new GumpPic(0, 4, 0x15A0, 0) { AcceptKeyboardInput = false });
                 //// Quit Button
-                Add(new Button((int) Buttons.Quit, 0x1589, 0x158B, 0x158A)
-                {
-                    X = 555,
-                    Y = 4,
-                    ButtonAction = ButtonAction.Activate
-                });
+                //Add(new Button((int) Buttons.Quit, 0x1589, 0x158B, 0x158A)
+                //{
+                //    X = 555,
+                //    Y = 4,
+                //    ButtonAction = ButtonAction.Activate
+                //});
 
                 // Login Panel
-                Add(new ResizePic(0x13BE)
+                Add(new ResizePic(0x13EC)
                 {
-                    X = 128,
-                    Y = 288,
+                    X = 90,
+                    Y = 258,
                     Width = 451,
                     Height = 157
                 });
 
-                if (Client.Version < ClientVersion.CV_500A)
-                    Add(new GumpPic(286, 45, 0x058A, 0));
+                //if (Client.Version < ClientVersion.CV_500A)
+                //    Add(new GumpPic(286, 45, 0x058A, 0));
 
-                Add(new Label("Log in to Ultima Online", false, HUE, font: 2)
+                Add(new Label("Ravendor'a Giriş Yap", true, 0x0779, font: 3)
                 {
-                    X = 253,
+                    X = 223,
+                    Y = 270
+                });
+
+                Add(new Label("Kullanıcı Adı", true, HUE, font: 3)
+                {
+                    X = 153,
                     Y = 305
                 });
 
-                Add(new Label("Account Name", false, HUE, font: 2)
+                Add(new Label("Şifre", true, HUE, font: 3)
                 {
-                    X = 183,
+                    X = 153,
                     Y = 345
-                });
-
-                Add(new Label("Password", false, HUE, font: 2)
-                {
-                    X = 183,
-                    Y = 385
                 });
 
                 // Arrow Button
@@ -107,32 +107,32 @@ namespace ClassicUO.Game.UI.Gumps.Login
                 });
 
 
-                offsetX = 328;
-                offsetY = 343;
+                offsetX = 298;
+                offsetY = 303;
                 offtextY = 40;
 
                 Add(new Label($"UO Version {Settings.GlobalSettings.ClientVersion}.", false, 0x034E, font: 9)
                 {
-                    X = 286,
-                    Y = 453
+                    X = 256,
+                    Y = 433
                 });
 
                 Add(new Label($"ClassicUO Version {CUOEnviroment.Version}", false, 0x034E, font: 9)
                 {
-                    X = 286,
-                    Y = 465
+                    X = 216,
+                    Y = 445
                 });
 
-                Add(_checkboxAutologin = new Checkbox(0x00D2, 0x00D3, "Autologin", 1, 0x0386, false)
+                Add(_checkboxAutologin = new Checkbox(0x7538, 0x7539, "Oto giriş", 1, 0x07A1, true)
                 {
                     X = 200,
-                    Y = 417
+                    Y = 385
                 });
 
-                Add(_checkboxSaveAccount = new Checkbox(0x00D2, 0x00D3, "Save Account", 1, 0x0386, false)
+                Add(_checkboxSaveAccount = new Checkbox(0x7538, 0x7539, "Hesabı kaydet", 1, 0x07A1, true)
                 {
-                    X = _checkboxAutologin.X + _checkboxAutologin.Width + 10,
-                    Y = 417
+                    X = _checkboxAutologin.X + _checkboxAutologin.Width + 30,
+                    Y = 385
                 });
             }
             else
@@ -165,33 +165,33 @@ namespace ClassicUO.Game.UI.Gumps.Login
 
                 Add(new Label($"UO Version {Settings.GlobalSettings.ClientVersion}.", false, 0x0481, font: 9)
                 {
-                    X = 286,
-                    Y = 453
+                    X = 256,
+                    Y = 433
                 });
 
                 Add(new Label($"ClassicUO Version {CUOEnviroment.Version}", false, 0x0481, font: 9)
                 {
-                    X = 286,
-                    Y = 465
+                    X = 256,
+                    Y = 445
                 });
 
 
                 Add(_checkboxAutologin = new Checkbox(0x00D2, 0x00D3, "Autologin", 9, 0x0481, false)
                 {
                     X = 200,
-                    Y = 417
+                    Y = 410
                 });
 
                 Add(_checkboxSaveAccount = new Checkbox(0x00D2, 0x00D3, "Save Account", 9, 0x0481, false)
                 {
                     X = _checkboxAutologin.X + _checkboxAutologin.Width + 10,
-                    Y = 417
+                    Y = 410
                 });
             }
 
 
             // Account Text Input Background
-            Add(new ResizePic(0x0BB8)
+            Add(new ResizePic(0x2454)
             {
                 X = offsetX,
                 Y = offsetY,
@@ -200,7 +200,7 @@ namespace ClassicUO.Game.UI.Gumps.Login
             });
 
             // Password Text Input Background
-            Add(new ResizePic(0x0BB8)
+            Add(new ResizePic(0x2454)
             {
                 X = offsetX,
                 Y = offsetY + offtextY,
@@ -239,26 +239,26 @@ namespace ClassicUO.Game.UI.Gumps.Login
             _checkboxAutologin.IsChecked = Settings.GlobalSettings.AutoLogin;
 
 
-            int htmlX = 130;
-            int htmlY = 442;
+            //int htmlX = 130;
+            //int htmlY = 442;
 
-            Add(new HtmlControl(htmlX, htmlY, 300, 100,
-                                false, false,
-                                false,
-                                text: "<body link=\"#ad9413\" vlink=\"#00FF00\" ><a href=\"https://www.paypal.me/muskara\">> Support ClassicUO",
-                                0x32, true, isunicode: true, style: FontStyle.BlackBorder));
-            Add(new HtmlControl(htmlX, htmlY + 20, 300, 100,
-                                false, false,
-                                false,
-                                text: "<body link=\"#ad9413\" vlink=\"#00FF00\" ><a href=\"https://www.patreon.com/user?u=21694183\">> Become a Patreon!",
-                                0x32, true, isunicode: true, style: FontStyle.BlackBorder));
+            //Add(new HtmlControl(htmlX, htmlY, 300, 100,
+            //                    false, false,
+            //                    false,
+            //                    text: "<body link=\"#ad9413\" vlink=\"#00FF00\" ><a href=\"https://www.paypal.me/muskara\">> Support ClassicUO",
+            //                    0x32, true, isunicode: true, style: FontStyle.BlackBorder));
+            //Add(new HtmlControl(htmlX, htmlY + 20, 300, 100,
+            //                    false, false,
+            //                    false,
+            //                    text: "<body link=\"#ad9413\" vlink=\"#00FF00\" ><a href=\"https://www.patreon.com/user?u=21694183\">> Become a Patreon!",
+            //                    0x32, true, isunicode: true, style: FontStyle.BlackBorder));
 
 
-            Add(new HtmlControl(505, htmlY + 19, 300, 100,
-                                           false, false,
-                                           false,
-                                           text: "<body link=\"#6a6a62\" vlink=\"#00FF00\" ><a href=\"https://discord.gg/VdyCpjQ\">CUO Discord",
-                                           0x32, true, isunicode: true, style: FontStyle.Cropped));
+            //Add(new HtmlControl(505, htmlY + 19, 300, 100,
+            //                               false, false,
+            //                               false,
+            //                               text: "<body link=\"#6a6a62\" vlink=\"#00FF00\" ><a href=\"https://discord.gg/VdyCpjQ\">CUO Discord",
+            //                               0x32, true, isunicode: true, style: FontStyle.Cropped));
 
 
             if (!string.IsNullOrEmpty(_textboxAccount.Text))

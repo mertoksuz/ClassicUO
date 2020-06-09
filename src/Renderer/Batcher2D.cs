@@ -1369,6 +1369,7 @@ namespace ClassicUO.Renderer
             return true;
         }
 
+
         [MethodImpl(256)]
         public bool DrawLine(Texture2D texture, int startX, int startY, int endX, int endY, int originX, int originY)
         {

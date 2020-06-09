@@ -48,13 +48,13 @@ namespace ClassicUO.Game.UI.Gumps.Login
             CanCloseWithRightClick = false;
             CanCloseWithEsc = false;
 
-            _label = new Label(labelText, false, 0x0386, 326, 2, align: TEXT_ALIGN_TYPE.TS_CENTER)
+            _label = new Label(labelText, true, 0x07A1, 326, 3, align: TEXT_ALIGN_TYPE.TS_CENTER)
             {
                 X = 162,
                 Y = 178
             };
 
-            Add(new ResizePic(0x0A28)
+            Add(new ResizePic(0x13EC)
             {
                 X = 142, Y = 134, Width = 366, Height = 212
             });

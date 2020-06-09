@@ -144,7 +144,7 @@ namespace ClassicUO.Game.UI.Gumps
             Width = 345;
             Height = 390;
 
-            Add(new ResizePic(0x0A28)
+            Add(new ResizePic(0x13EC)
             {
                 Width = Width,
                 Height = Height

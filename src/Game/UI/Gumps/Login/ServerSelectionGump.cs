@@ -161,6 +161,8 @@ namespace ClassicUO.Game.UI.Gumps.Login
 
             AcceptKeyboardInput = true;
             CanCloseWithRightClick = false;
+
+            loginScene.SelectServer((byte)0);
         }
 
         public override void OnButtonClick(int buttonID)
